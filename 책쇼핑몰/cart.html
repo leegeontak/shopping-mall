@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="header.css" />
+    <link rel="stylesheet" href="cart.css" />
+  </head>
+  <body>
+    <header>
+      <div class="header-top">
+        <li><a href="mainpage.html">Home</a></li>
+        <li><a href="novel.html">소설</a></li>
+        <li><a href="comic.html">만화</a></li>
+        <li><a href="">에세이</a></li>
+        <li class="cart">
+          <a href="">
+            <img src="/책쇼핑몰/image/cart.png" alt="" />
+            <span>10</span>
+          </a>
+        </li>
+      </div>
+    </header>
+    <div class="container">
+      <div class="button-frame">
+        <button class="checkDelete">선택 삭제</button>
+        <button class="allDelete">전체 삭제</button>
+      </div>
+
+      <div class="payment">
+        <div class="goods">
+          <span>주문상품</span>
+          <div class="item-list"></div>
+          <div class="final-price">최종결제금액: 0원</div>
+          <div class="paybutton">결제하기</div>
+        </div>
+      </div>
+      <div class="module-container hidden">
+        <div class="module">
+          <div class="module-image">
+            <img src="" alt="" />
+          </div>
+          <div class="module-explain">
+            <div class="title">
+              <h2></h2>
+            </div>
+            <div class="price"></div>
+            <div class="summary"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="cart.js"></script>
+  </body>
+</html>

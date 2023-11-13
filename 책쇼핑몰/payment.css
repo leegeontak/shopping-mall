@@ -1,0 +1,108 @@
+.section ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  padding: 0px;
+  margin-top: 40px;
+  border-bottom: 1px solid black;
+}
+.section li {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+.section li:nth-child(1) {
+  font-size: 24px;
+}
+.section {
+  width: 70%;
+  margin: auto;
+}
+.main {
+  display: flex;
+  gap: 30px;
+}
+.item-frame {
+  padding: 10px;
+  border: 1px solid black;
+  width: 40%;
+}
+.pay-info {
+  border-bottom: 1px solid black;
+}
+.item-name,
+.item-price {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 12px;
+  min-height: 200px;
+}
+.item-price {
+  float: right;
+}
+.final-price {
+  border-top: 1px solid black;
+  padding-top: 5px;
+}
+.final-price span {
+  float: right;
+}
+.ordererName,
+.receicerName {
+  width: 100px;
+}
+
+.address {
+  display: block;
+  width: 300px;
+}
+.PN {
+  width: 50px;
+}
+#infoTable {
+  /* width: 100%; */
+  margin: auto;
+  border-collapse: collapse;
+  box-sizing: border-box;
+}
+td {
+  border: 1px solid black;
+  box-sizing: border-box;
+  height: 30px;
+}
+tr > td:nth-child(1) {
+  position: relative;
+  background-color: #edf5fc;
+  padding-left: 10px;
+}
+tr > td:nth-child(1)::before {
+  position: absolute;
+  content: '*';
+  left: 2px;
+  color: red;
+}
+input {
+  line-height: 20px;
+  height: 20px;
+  outline: none;
+  margin: 3px;
+}
+
+.detail-address::placeholder {
+  transition: 0.2s;
+}
+.detail-address:focus::placeholder {
+  color: transparent;
+}
+.paybutton {
+  width: 100%;
+  border: none;
+  margin-top: 10px;
+  text-align: center;
+  color: white;
+  background-color: crimson;
+  padding: 15px 0px;
+}
+.paybutton:hover {
+  cursor: pointer;
+}

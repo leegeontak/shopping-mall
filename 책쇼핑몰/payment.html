@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="header.css" />
+    <link rel="stylesheet" href="payment.css" />
+  </head>
+  <body>
+    <header>
+      <div class="header-top">
+        <li><a href="mainpage.html">Home</a></li>
+        <li><a href="novel.html">소설</a></li>
+        <li><a href="comic.html">만화</a></li>
+        <li><a href="essay.html">에세이</a></li>
+        <li class="cart">
+          <a href="cart.html">
+            <img src="/책쇼핑몰/image/cart.png" alt="" />
+            <span>10</span>
+          </a>
+        </li>
+      </div>
+    </header>
+    <div class="container">
+      <div class="section">
+        <div class="section-header">
+          <ul>
+            <li>주문과정</li>
+            <span>></span>
+            <li>주문완료</li>
+          </ul>
+        </div>
+        <div class="main">
+          <div class="item-frame">
+            <div class="pay-info">결제정보</div>
+            <div class="item-name"></div>
+            <div class="item-price"></div>
+            <div class="final-price">
+              최종결제금액
+              <span>123</span>
+            </div>
+          </div>
+          <div class="table-frame">
+            <form action="finalPayment.html" id="infoForm">
+              <table id="infoTable">
+                <tbody>
+                  <tr>
+                    <td>주문인</td>
+                    <td><input type="text" class="ordererName" required /></td>
+                  </tr>
+                  <tr>
+                    <td>받으시는분</td>
+                    <td><input type="text" class="receicerName" required /></td>
+                  </tr>
+                  <tr>
+                    <td>주소</td>
+                    <td>
+                      <input type="text" class="zip-code" required />
+                      <button class="find-address">주소검색</button>
+                      <input type="text" class="address" required />
+                      <input
+                        type="text"
+                        class="detail-address"
+                        placeholder="상세주소를 입력하세요"
+                        required
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>전화번호</td>
+                    <td>
+                      <input
+                        type="tel"
+                        class="PN Tel1"
+                        maxlength="4"
+                        required
+                      />
+                      -
+                      <input
+                        type="tel"
+                        class="PN Tel2"
+                        maxlength="4"
+                        required
+                      />
+                      -
+                      <input
+                        type="tel"
+                        class="PN Tel3"
+                        maxlength="4"
+                        required
+                      />
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </form>
+            <button form="infoForm" class="paybutton">결제하기</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+    <script src="payment.js"></script>
+  </body>
+</html>
