@@ -193,6 +193,10 @@ paybtn.addEventListener('click', () => {
       JSON.parse(localStorage.getItem(selectSrc)).price
     );
   }
+  if (selectBox.length == 0) {
+    alert('주문상품이 없습니다');
+    return (location.href = 'cart.html');
+  }
   for (let i = 0; i < buyCheck.length; i++) {
     buyCheck[i].checked = false;
   }
