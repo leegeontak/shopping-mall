@@ -127,8 +127,6 @@
   color: rgb(188, 55, 188);
 }
 .moreBook {
-  position: relative;
-  appearance: none;
   width: 160px;
   height: 160px;
   border: none;

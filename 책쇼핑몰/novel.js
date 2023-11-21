@@ -55,7 +55,7 @@ for (i = 0; i < localStorage.length; i++) {
   const localValue = JSON.parse(localStorage.getItem(localStorage.key(i))).name;
   for (j = 0; j < bookImg.length; j++) {
     if (bookImg[j].getAttribute('alt').indexOf(localValue) !== -1) {
-      console.log(bookImg[j].getAttribute('alt'));
+      // console.log(bookImg[j].getAttribute('alt'));
       likebtn[j].classList.add('delete');
     }
   }
@@ -64,11 +64,9 @@ for (i = 0; i < localStorage.length; i++) {
 for (let i = 0; i < buyBtn.length; i++) {
   buyBtn[i].addEventListener('click', () => {
     const title = document.querySelectorAll('.title span');
-    console.log(title[i].innerHTML);
     let textPrice = price[i].innerHTML.replace(/,/g, '');
     sessionStorage.setItem(title[i].innerHTML, Number(textPrice));
     location.href = 'payment.html';
-    console.log(sessionStorage);
   });
 }
 const moduleContainer = document.querySelector('.module-container');

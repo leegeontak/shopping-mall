@@ -1,4 +1,5 @@
 const container = document.querySelector('.container');
+const bookFrame = document.querySelector('.book-frame');
 const moduleContainer = document.querySelector('.module-container');
 const goods = document.querySelector('.goods');
 let span = document.querySelector('.cart span');
@@ -33,7 +34,7 @@ for (i = 0; i < localStorage.length; i++) {
   shop.append(priceFrame);
   // removeBtn.innerHTML = '삭제하기';
   bookContainer.append(check, imgdiv, explain, shop);
-  container.append(bookContainer);
+  bookFrame.append(bookContainer);
 
   const cover = document.querySelectorAll('.book-img img');
   cover[i].setAttribute(
