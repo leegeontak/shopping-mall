@@ -8,6 +8,16 @@ const price = document.querySelectorAll('.price span');
 const summary = document.querySelectorAll('.summary');
 const buyBtn = document.querySelectorAll('.buybtn');
 
+input.addEventListener("input",()=>{
+  for (let i = 0; i < bookImg.length; i++) {
+    if (bookImg[i].getAttribute('alt').indexOf(input.value) == -1) {
+      bookImg[i].parentElement.parentElement.style.display = 'none';
+    } else {
+      bookImg[i].parentElement.parentElement.style.display = 'flex';
+    }
+  }
+})
+
 for (i = 0; i < price.length; i++) {
   price[i].innerText = price[i].innerText.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 } //가격에 천단위마다 , 찍는것
@@ -15,16 +25,13 @@ for (i = 0; i < price.length; i++) {
 span.innerHTML = localStorage.length;
 button.addEventListener('click', () => {
   for (let i = 0; i < bookImg.length; i++) {
-    // bookImg[i].getAttribute('alt').indexOf(input.value);
     if (bookImg[i].getAttribute('alt').indexOf(input.value) == -1) {
       bookImg[i].parentElement.parentElement.style.display = 'none';
-      console.log(bookImg[i].parentElement.parentElement);
     } else {
       bookImg[i].parentElement.parentElement.style.display = 'flex';
     }
   }
 });
-// localStorage.clear();
 // 새로고침하면 로컬스토리지 초기화
 let arr = []; //객체를 담을 배열
 likebtn.forEach((e, index) => {
@@ -35,8 +42,6 @@ likebtn.forEach((e, index) => {
     obj.summary = summary[index].innerText;
     obj.price = price[index].innerText.replace(/,/g, '');
     arr.push(obj); //객체를 배열에 추가
-    console.log(obj);
-    console.log(arr);
     localStorage.setItem(
       arr[arr.length - 1].src,
       JSON.stringify(arr[arr.length - 1])
@@ -55,7 +60,6 @@ for (i = 0; i < localStorage.length; i++) {
   const localValue = JSON.parse(localStorage.getItem(localStorage.key(i))).name;
   for (j = 0; j < bookImg.length; j++) {
     if (bookImg[j].getAttribute('alt').indexOf(localValue) !== -1) {
-      // console.log(bookImg[j].getAttribute('alt'));
       likebtn[j].classList.add('delete');
     }
   }
@@ -90,4 +94,3 @@ moduleContainer.addEventListener('click', (e) => {
   }
 });
 sessionStorage.clear();
-console.log(sessionStorage);

@@ -61,7 +61,6 @@ for (i = 0; i < localStorage.length; i++) {
     JSON.parse(localStorage.getItem(localStorage.key(i)))
       .price.toString()
       .replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ',') + '원';
-  console.log(price[i].innerText);
   //각 책의 가격 값은 각 localstorage의 객체의 가격에 천단위마다 , 찍음
 } //localstorage에 따라 div 생성하는 거
 
@@ -70,7 +69,6 @@ const price = document.querySelectorAll('.price');
 for (let i = 0; i < buyCheck.length; i++) {
   buyCheck[i].addEventListener('change', function () {
     if (buyCheck[i].checked) {
-      console.log(i);
       let title = JSON.parse(localStorage.getItem(localStorage.key(i))).name;
       let price = Number(
         JSON.parse(localStorage.getItem(localStorage.key(i))).price
@@ -112,7 +110,6 @@ function checkFalse(title, price, i) {
     '원';
 }
 const bookImg = document.querySelectorAll('.book-img img');
-console.log(bookImg);
 for (let i = 0; i < bookImg.length; i++) {
   const moduleImage = document.querySelector('.module-image img');
   const title = document.querySelector('.module-explain .title h2');
@@ -161,9 +158,7 @@ checkDelete.addEventListener('click', () => {
       selectBox[i].nextElementSibling.children[0].getAttribute('src');
     const selectAlt =
       selectBox[i].nextElementSibling.children[0].getAttribute('alt');
-    console.log(selectAlt);
     const itemListDiv = document.querySelectorAll('.item-list div');
-    console.log(itemListDiv);
     itemListDiv[0].remove();
     selectBox[i].parentElement.remove();
     localStorage.removeItem(selectSrc);
@@ -187,8 +182,6 @@ paybtn.addEventListener('click', () => {
       selectBox[i].nextElementSibling.children[0].getAttribute('src');
     const selectAlt =
       selectBox[i].nextElementSibling.children[0].getAttribute('alt');
-    console.log(selectSrc);
-    console.log(JSON.parse(localStorage.getItem(selectSrc)).price);
     sessionStorage.setItem(
       selectAlt,
       JSON.parse(localStorage.getItem(selectSrc)).price
@@ -203,6 +196,4 @@ paybtn.addEventListener('click', () => {
   }
   location.href = 'payment.html';
 });
-console.log(sessionStorage);
 sessionStorage.clear();
-console.log(sessionStorage);
